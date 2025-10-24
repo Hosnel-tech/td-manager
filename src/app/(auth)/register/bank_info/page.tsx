@@ -4,12 +4,10 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export default function RegisterPage() {
+export default function BankInfoPage() {
   const router = useRouter();
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    router.push("/register/bank_info");
-    // TODO: Handle form submission
+  const handleBack = () => {
+    router.push("/register");
   };
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-purple-50 flex items-center justify-center">
@@ -43,7 +41,7 @@ export default function RegisterPage() {
               1
             </span>
             <div className="w-12 h-1 bg-gray-300"></div>
-            <span className="w-8 h-8 flex items-center justify-center bg-gray-200 rounded-full">
+            <span className="w-8 h-8 flex items-center justify-center bg-[#004B70] text-white rounded-full">
               2
             </span>
             <div className="w-12 h-1 bg-gray-300"></div>
@@ -59,7 +57,7 @@ export default function RegisterPage() {
         </h2>
 
         {/* Form */}
-        <form className="space-y-4" onSubmit={handleSubmit}>
+        <form className="space-y-4">
           <div className="flex space-x-4">
             <div className="w-1/2">
               <label
@@ -69,7 +67,7 @@ export default function RegisterPage() {
                 Prénom
               </label>
               <input
-                className="w-full px-3 py-2 border border-[#004B70] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#004B70]"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 id="firstName"
                 type="text"
                 placeholder="Prénom"
@@ -83,7 +81,7 @@ export default function RegisterPage() {
                 Nom
               </label>
               <input
-                className="w-full px-3 py-2 border border-[#004B70] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#004B70]"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 id="lastName"
                 type="text"
                 placeholder="Nom"
@@ -98,7 +96,7 @@ export default function RegisterPage() {
               Adresse email
             </label>
             <input
-              className="w-full px-3 py-2 border border-[#004B70] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#004B70]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               id="email"
               type="email"
               placeholder="Adresse email"
@@ -112,13 +110,20 @@ export default function RegisterPage() {
               Numéro de téléphone
             </label>
             <input
-              className="w-full px-3 py-2 border border-[#004B70] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#004B70]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               id="phone"
               type="tel"
               placeholder="Numéro de téléphone"
             />
           </div>
-          <div className="flex justify-end">
+          <div className="flex justify-between gap-6">
+            <button
+              type="button"
+              onClick={handleBack}
+              className="w-1/2 bg-white text-[#004B70] py-2 border border-[#004B70] rounded-lg hover:bg-[#004B70] hover:text-white transition duration-300"
+            >
+              Retour
+            </button>
             <button
               type="submit"
               className="w-1/2 bg-[#004B70]/80 text-white py-2 rounded-lg hover:bg-[#004B70] transition duration-300"

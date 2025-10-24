@@ -1,8 +1,17 @@
+'use client';
+
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  return (
+    const router = useRouter();
+    const handleLogin = (e: React.FormEvent) => {
+        e.preventDefault();
+        router.push("/register");
+        // TODO: Add login logic here
+    };
+    return (
     <div className="min-h-screen bg-gradient-to-b from-white to-purple-50 flex items-center justify-center">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
         {/* Logo */}
@@ -30,7 +39,7 @@ export default function LoginPage() {
         </h1>
 
         {/* Form */}
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleLogin}>
           <div>
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
