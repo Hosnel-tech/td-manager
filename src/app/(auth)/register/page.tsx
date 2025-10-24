@@ -59,7 +59,7 @@ export default function RegisterPage() {
         </h2>
 
         {/* Form */}
-        <form className="space-y-4" onSubmit={handleSubmit}>
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="flex space-x-4">
             <div className="w-1/2">
               <label

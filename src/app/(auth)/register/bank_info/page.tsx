@@ -9,6 +9,11 @@ export default function BankInfoPage() {
   const handleBack = () => {
     router.push("/register");
   };
+  const handleSubmit = (e: React.FormEvent) => {
+      e.preventDefault();
+      router.push("/register/last_info");
+    };
+    
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-purple-50 flex items-center justify-center">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
@@ -53,24 +58,24 @@ export default function BankInfoPage() {
 
         {/* Informations personnelles */}
         <h2 className="text-xl font-semibold text-gray-800 mb-4">
-          Informations personnelles
+          Informations bancaires
         </h2>
 
         {/* Form */}
-        <form className="space-y-4">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="flex space-x-4">
             <div className="w-1/2">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="firstName"
               >
-                Prénom
+                IFU
               </label>
               <input
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                id="firstName"
+                className="w-full px-3 py-2 border border-[#004B70] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#004B70]"
+                id="ifu"
                 type="text"
-                placeholder="Prénom"
+                placeholder="IFU"
               />
             </div>
             <div className="w-1/2">
@@ -78,44 +83,94 @@ export default function BankInfoPage() {
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="lastName"
               >
-                Nom
+                Numero bancaire
               </label>
               <input
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                id="lastName"
+                className="w-full px-3 py-2 border border-[#004B70] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#004B70]"
+                id="numeroCompte"
                 type="text"
-                placeholder="Nom"
+                placeholder="Numero bancaire"
               />
             </div>
           </div>
+
+          {/* Banque */}
           <div>
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="email"
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="bank"
             >
-              Adresse email
+                Sélectionne votre Banque
             </label>
-            <input
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              id="email"
-              type="email"
-              placeholder="Adresse email"
-            />
+            <select
+                className="w-full px-3 py-2 border border-[#004B70] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#004B70]"
+                id="bank"
+            >
+                <option value="">Sélectionner votre banque</option>
+                <option value="ecobank">Ecobank</option>
+                <option value="boa">BOA</option>
+                <option value="bsii">BSII</option>
+            </select>
           </div>
+
+          {/* Etablissement */}
           <div>
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="phone"
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="etablissement"
             >
-              Numéro de téléphone
+                Sélectionne votre Etablissement
             </label>
-            <input
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              id="phone"
-              type="tel"
-              placeholder="Numéro de téléphone"
-            />
+            <select
+                className="w-full px-3 py-2 border border-[#004B70] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#004B70]"
+                id="etablissement"
+            >
+                <option value="">Sélectionner votre établissement</option>
+                <option value="berger">Berger</option>
+                <option value="palmier">Palmier</option>
+                <option value="pyramide">Pyramide</option>
+            </select>
           </div>
+
+          {/* Matiere */}
+          <div>
+            <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="matiere"
+            >
+                Sélectionne votre Matiere
+            </label>
+            <select
+                className="w-full px-3 py-2 border border-[#004B70] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#004B70]"
+                id="matiere"
+            >
+                <option value="">Sélectionner votre matiere</option>
+                <option value="anglais">Anglais</option>
+                <option value="francais">Français</option>
+                <option value="mathematiques">Mathématiques</option>
+            </select>
+          </div>
+
+          {/* Classe */}
+          <div>
+            <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="classe"
+            >
+                Sélectionne votre Classe
+            </label>
+            <select
+                className="w-full px-3 py-2 border border-[#004B70] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#004B70]"
+                id="classe"
+            >
+                <option value="">Sélectionner votre classe</option>
+                <option value="cm2">CM2</option>
+                <option value="3eme">3ème</option>
+                <option value="tles">Tle</option>
+            </select>
+          </div>
+
+          {/* Boutons */}
           <div className="flex justify-between gap-6">
             <button
               type="button"

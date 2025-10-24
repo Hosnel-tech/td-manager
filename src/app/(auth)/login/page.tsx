@@ -39,7 +39,7 @@ export default function LoginPage() {
         </h1>
 
         {/* Form */}
-        <form className="space-y-4" onSubmit={handleLogin}>
+        <form className="space-y-6" onSubmit={handleLogin}>
           <div>
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
