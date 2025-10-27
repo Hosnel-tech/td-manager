@@ -12,7 +12,7 @@ export default function LastInfoPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push("/register/last_info");
+    router.push("/register/teach_dashboard");
     // TODO: Handle form submission
   };
   return (

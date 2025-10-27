@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import Sidebar from '@/components/teach_sidebar'; // Import the Sidebar component
 
@@ -16,11 +17,11 @@ export default function Dashboard() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
             </svg>
           </div>
-          <h1 className="text-2xl font-bold">EduTD Teacher</h1>
+          <h1 className="text-2xl font-bold">EduTD Manager</h1>
         </div>
         
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-4">Tableau de bord</h2>
+          <h2 className="text-xl font-semibold mb-2">Tableau de bord</h2>
           <p className="text-gray-600 mb-6">Bienvenue dans votre espace enseignant</p>
           
           {/* Stats section */}
@@ -70,7 +71,7 @@ export default function Dashboard() {
           </div>
           
           {/* Quick Actions section */}
-          <div className="bg-white p-4 rounded-lg shadow">
+          {/* <div className="bg-white p-4 rounded-lg shadow">
             <h3 className="text-lg font-semibold mb-4">Actions rapides</h3>
             <div className="space-y-2">
               <button className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">
@@ -86,13 +87,7 @@ export default function Dashboard() {
                 Statistiques
               </button>
             </div>
-          </div>
-        </div>
-        
-        {/* Recent Activity section */}
-        <div className="bg-white p-6 rounded-lg shadow mt-6">
-          <h3 className="text-lg font-semibold mb-4">Activité récente</h3>
-          {/* Add dynamic content or placeholder as needed */}
+          </div> */}
         </div>
       </div>
     </div>

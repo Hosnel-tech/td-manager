@@ -8,7 +8,7 @@ export default function LoginPage() {
     const router = useRouter();
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        router.push("/register");
+        router.push("/teach_dashboard");
         // TODO: Add login logic here
     };
     return (

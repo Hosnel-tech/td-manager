@@ -16,7 +16,7 @@ export default function TeachSidebar() {
           </svg>
         </div>
         {/* App title */}
-        <h2 className="text-xl font-bold">EduTD Teacher</h2>
+        <h2 className="text-xl font-bold">EduTD Manager</h2>
       </div>
       {/* Navigation menu with spaced-out links */}
       <nav className="space-y-2">
